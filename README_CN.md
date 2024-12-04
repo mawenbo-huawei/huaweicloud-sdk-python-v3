@@ -232,6 +232,8 @@ if __name__ == "__main__":
     * [7.1 自定义请求头](#71-自定义请求头-top)
     * [7.2 请求重试](#72-请求重试-top)
 * [8. 文件上传与下载](#8-文件上传与下载-top)
+* [9. FAQ](#9-faq-top)
+    * [9.1 云联盟场景如何调用](#91-云联盟场景如何调用-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -1087,4 +1089,26 @@ if __name__ == "__main__":
         .build()
     
     create_image_watermark(dsc_client)
+```
+
+### 9. FAQ [:top:](#用户手册-top)
+ 
+#### 9.1 云联盟场景如何调用 [:top:](#用户手册-top)
+
+```python
+# 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例
+endpoint = "https://vpc.eu-west-101.myhuaweicloud.com"
+
+# 初始化客户端认证信息，需要填写相应 project_id/domain_id，以初始化 BasicCredentials 为例
+ak = os.getenv("HUAWEICLOUD_SDK_AK")
+sk = os.getenv("HUAWEICLOUD_SDK_SK")
+project_id = "{your projectId string}"
+basic_credentials = BasicCredentials(ak, sk, project_id)
+
+# 初始化指定云服务的客户端 {Service}Client ，以初始化 Region 级服务 VPC 的 VpcClient 为例
+client = VpcClient.new_builder() \
+    .with_http_config(config) \
+    .with_credentials(basic_credentials) \
+    .with_endpoint(endpoint) \
+    .build()
 ```

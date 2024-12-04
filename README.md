@@ -233,6 +233,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-python-v3/blob
     * [7.1 Custom request headers](#71-custom-request-headers-top)
     * [7.2 Retry](#72-retry-top)
 * [8. Upload and download files](#7-upload-and-download-files-top)
+* [9. FAQ](#9-faq-top)
+    * [9.1 How to use in Cloud Service Alliance Scenarios](#91-how-to-use-in-cloud-service-alliance-scenarios-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
 
@@ -1097,4 +1099,26 @@ if __name__ == "__main__":
         .build()
     
     create_image_watermark(dsc_client)
+```
+
+### 9. FAQ [:top:](#user-manual-top)
+ 
+#### 9.1 How to use in Cloud Service Alliance Scenarios [:top:](#user-manual-top)
+
+```python
+# Specify the endpoint, take the endpoint of VPC service in region of eu-west-101 for example
+endpoint = "https://vpc.eu-west-101.myhuaweicloud.com"
+
+# Initialize the credentials, you should provide project_id or domain_id in this way, take initializing BasicCredentials for example
+ak = os.getenv("HUAWEICLOUD_SDK_AK")
+sk = os.getenv("HUAWEICLOUD_SDK_SK")
+project_id = "{your projectId string}"
+basic_credentials = BasicCredentials(ak, sk, project_id)
+
+# Initialize specified service client instance, take initializing the regional service VPC's VpcClient for example
+client = VpcClient.new_builder() \
+    .with_http_config(config) \
+    .with_credentials(basic_credentials) \
+    .with_endpoint(endpoint) \
+    .build()
 ```

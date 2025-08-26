@@ -25,4 +25,4 @@ jobs:
         tox -e "$py" "$TOX_OPTS"
       env:
         PYTHON_VERSION: ${{ matrix.python-version }}
-        TOX_OPTS: ${{ vars.tox_opts }}
+        TOX_OPTS: ${{ vars.TOX_OPTS }}

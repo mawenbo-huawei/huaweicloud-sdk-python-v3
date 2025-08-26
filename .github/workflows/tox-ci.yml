@@ -20,6 +20,7 @@ jobs:
     - name: Pytest CI
       run: |
         python -m pip install --upgrade pip
+        pip install tox
         cd huaweicloud-sdk-core || exit 1
         py=$(echo "$PYTHON_VERSION" | sed 's/\.//g; s/^/py/')
         tox -e "$py" "$TOX_OPTS"

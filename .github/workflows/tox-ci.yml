@@ -1,0 +1,28 @@
+name: Tox CI
+permissions:
+  contents: read
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 0 * * *'
+jobs:
+  test:  
+    runs-on: ubuntu-22.04
+    strategy:  
+      matrix:  
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+    steps:  
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}  
+      uses: actions/setup-python@v5
+      with:  
+        python-version: ${{ matrix.python-version }}  
+    - name: Pytest CI
+      run: |
+        python -m pip install --upgrade pip
+        cd huaweicloud-sdk-core || exit 1
+        py=$(echo "$PYTHON_VERSION" | sed 's/\.//g; s/^/py/')
+        tox -e "$py" "$TOX_OPTS"
+      env:
+        PYTHON_VERSION: ${{ matrix.python-version }}
+        TOX_OPTS: ${{ vars.tox_opts }}

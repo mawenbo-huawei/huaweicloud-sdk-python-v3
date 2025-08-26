@@ -23,7 +23,7 @@ jobs:
         pip install tox
         cd huaweicloud-sdk-core || exit 1
         py=$(echo "$PYTHON_VERSION" | sed 's/\.//g; s/^/py/')
-        tox -e "$py" "$TOX_OPTS"
+        tox -e "$py"
       env:
         PYTHON_VERSION: ${{ matrix.python-version }}
-        TOX_OPTS: ${{ vars.TOX_OPTS }}
+        PYTEST_EXTRA_ARGS: ${{ vars.PYTEST_EXTRA_ARGS }}

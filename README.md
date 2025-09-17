@@ -6,8 +6,8 @@ English | [简体中文](./README_CN.md)
 
 <h1 align="center">Huawei Cloud Python Software Development Kit (Python SDK)</h1>
 
-![Python Version](https://img.shields.io/badge/python-3.6%2B-blue?logo=python)
-![Dynamic TOML Badge](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhuaweicloud%2Fhuaweicloud-sdk-python-v3%2Frefs%2Fheads%2Fmaster%2Fhuaweicloud-sdk-core%2Fpyproject.toml&query=%24.project.version&label=latest%20version&color=%231a7f37)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/huaweicloudsdkcore)
+![PyPI Version](https://img.shields.io/pypi/v/huaweicloudsdkcore)
 ![License](https://img.shields.io/badge/license-Apache--2.0-green)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/huaweicloud/huaweicloud-sdk-python-v3)
 

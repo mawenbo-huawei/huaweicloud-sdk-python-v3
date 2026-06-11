@@ -25,7 +25,6 @@ class ShowTaskGroupResponse(SdkResponse):
         'enable_metadata_migration': 'bool',
         'enable_failed_object_recording': 'bool',
         'enable_restore': 'bool',
-        'enable_kms': 'bool',
         'task_type': 'str',
         'bandwidth_policy': 'list[BandwidthPolicyDto]',
         'smn_config': 'SmnInfo',
@@ -53,6 +52,7 @@ class ShowTaskGroupResponse(SdkResponse):
         'object_overwrite_mode': 'str',
         'dst_storage_policy': 'str',
         'consistency_check': 'str',
+        'obs_system': 'str',
         'enable_requester_pays': 'bool'
     }
 
@@ -66,7 +66,6 @@ class ShowTaskGroupResponse(SdkResponse):
         'enable_metadata_migration': 'enable_metadata_migration',
         'enable_failed_object_recording': 'enable_failed_object_recording',
         'enable_restore': 'enable_restore',
-        'enable_kms': 'enable_kms',
         'task_type': 'task_type',
         'bandwidth_policy': 'bandwidth_policy',
         'smn_config': 'smn_config',
@@ -94,10 +93,11 @@ class ShowTaskGroupResponse(SdkResponse):
         'object_overwrite_mode': 'object_overwrite_mode',
         'dst_storage_policy': 'dst_storage_policy',
         'consistency_check': 'consistency_check',
+        'obs_system': 'obs_system',
         'enable_requester_pays': 'enable_requester_pays'
     }
 
-    def __init__(self, group_id=None, status=None, error_reason=None, src_node=None, description=None, dst_node=None, enable_metadata_migration=None, enable_failed_object_recording=None, enable_restore=None, enable_kms=None, task_type=None, bandwidth_policy=None, smn_config=None, source_cdn=None, migrate_since=None, migrate_speed=None, total_time=None, start_time=None, total_task_num=None, create_task_num=None, failed_task_num=None, complete_task_num=None, paused_task_num=None, executing_task_num=None, waiting_task_num=None, total_num=None, create_complete_num=None, success_num=None, fail_num=None, skip_num=None, total_size=None, create_complete_size=None, complete_size=None, failed_object_record=None, object_overwrite_mode=None, dst_storage_policy=None, consistency_check=None, enable_requester_pays=None):
+    def __init__(self, group_id=None, status=None, error_reason=None, src_node=None, description=None, dst_node=None, enable_metadata_migration=None, enable_failed_object_recording=None, enable_restore=None, task_type=None, bandwidth_policy=None, smn_config=None, source_cdn=None, migrate_since=None, migrate_speed=None, total_time=None, start_time=None, total_task_num=None, create_task_num=None, failed_task_num=None, complete_task_num=None, paused_task_num=None, executing_task_num=None, waiting_task_num=None, total_num=None, create_complete_num=None, success_num=None, fail_num=None, skip_num=None, total_size=None, create_complete_size=None, complete_size=None, failed_object_record=None, object_overwrite_mode=None, dst_storage_policy=None, consistency_check=None, obs_system=None, enable_requester_pays=None):
         r"""ShowTaskGroupResponse
 
         The model defined in huaweicloud sdk
@@ -120,8 +120,6 @@ class ShowTaskGroupResponse(SdkResponse):
         :type enable_failed_object_recording: bool
         :param enable_restore: 是否自动解冻归档数据，（由于对象存储解冻需要源端存储等待一定时间，开启自动解冻会对迁移速度有较大影响，建议先完成归档存储数据解冻后再启动迁移）。 开启后，如果遇到归档类型数据，会自动解冻再进行迁移；关闭后，如果遇到归档类型的对象直接跳过相应对象，系统默认对象迁移失败并记录相关信息到失败对象列表中。
         :type enable_restore: bool
-        :param enable_kms: 存储入OBS时是否使用KMS加密。
-        :type enable_kms: bool
         :param task_type: 任务类型，默认为PREFIX。 LIST：对象列表迁移 URL_LIST：URL列表迁移， PREFIX：对象前缀迁移
         :type task_type: str
         :param bandwidth_policy: 配置流量控制策略。数组中一个元素对应一个时段的最大带宽，最多允许5个时段，且时段不能重叠。
@@ -176,6 +174,8 @@ class ShowTaskGroupResponse(SdkResponse):
         :type dst_storage_policy: str
         :param consistency_check: 一致性校验方式，用于迁移前/后校验对象是否一致，所有校验方式需满足源端/目的端对象的加密状态一致，具体校验方式和校验结果可通过对象列表查看。默认size_last_modified。 size_last_modified：默认配置。迁移前后，通过对比源端和目的端对象大小+最后修改时间，判断对象是否已存在或迁移后数据是否完整。源端与目的端同名对象大小相同，且目的端对象的最后修改时间不早于源端对象的最后修改时间，则代表该对象已存在/迁移成功。 crc64：目前仅支持华为/阿里/腾讯。迁移前后，通过对比源端和目的端对象元数据中CRC64值是否相同，判断对象是否已存在/迁移完成。如果源端与目的端对象元数据中不存在CRC64值，则系统会默认使用大小/最后修改时间校验方式来校验。 no_check：目前仅支持HTTP/HTTPS数据源。当源端对象无法通过标准http协议中content-length字段获取数据大小时，默认数据下载成功即迁移成功，不对数据做额外校验，且迁移时源端对象默认覆盖目的端同名对象。当源端对象能正常通过标准http协议中content-length字段获取数据大小时，则采用大小/最后修改时间校验方式来校验。
         :type consistency_check: str
+        :param obs_system: OBS系统类型 BUCKET：一般桶 PFS：并行文件系统
+        :type obs_system: str
         :param enable_requester_pays: 是否开启请求者付款，在启用后，请求者支付请求和数据传输费用。
         :type enable_requester_pays: bool
         """
@@ -191,7 +191,6 @@ class ShowTaskGroupResponse(SdkResponse):
         self._enable_metadata_migration = None
         self._enable_failed_object_recording = None
         self._enable_restore = None
-        self._enable_kms = None
         self._task_type = None
         self._bandwidth_policy = None
         self._smn_config = None
@@ -219,6 +218,7 @@ class ShowTaskGroupResponse(SdkResponse):
         self._object_overwrite_mode = None
         self._dst_storage_policy = None
         self._consistency_check = None
+        self._obs_system = None
         self._enable_requester_pays = None
         self.discriminator = None
 
@@ -240,8 +240,6 @@ class ShowTaskGroupResponse(SdkResponse):
             self.enable_failed_object_recording = enable_failed_object_recording
         if enable_restore is not None:
             self.enable_restore = enable_restore
-        if enable_kms is not None:
-            self.enable_kms = enable_kms
         if task_type is not None:
             self.task_type = task_type
         if bandwidth_policy is not None:
@@ -296,6 +294,8 @@ class ShowTaskGroupResponse(SdkResponse):
             self.dst_storage_policy = dst_storage_policy
         if consistency_check is not None:
             self.consistency_check = consistency_check
+        if obs_system is not None:
+            self.obs_system = obs_system
         if enable_requester_pays is not None:
             self.enable_requester_pays = enable_requester_pays
 
@@ -484,28 +484,6 @@ class ShowTaskGroupResponse(SdkResponse):
         :type enable_restore: bool
         """
         self._enable_restore = enable_restore
-
-    @property
-    def enable_kms(self):
-        r"""Gets the enable_kms of this ShowTaskGroupResponse.
-
-        存储入OBS时是否使用KMS加密。
-
-        :return: The enable_kms of this ShowTaskGroupResponse.
-        :rtype: bool
-        """
-        return self._enable_kms
-
-    @enable_kms.setter
-    def enable_kms(self, enable_kms):
-        r"""Sets the enable_kms of this ShowTaskGroupResponse.
-
-        存储入OBS时是否使用KMS加密。
-
-        :param enable_kms: The enable_kms of this ShowTaskGroupResponse.
-        :type enable_kms: bool
-        """
-        self._enable_kms = enable_kms
 
     @property
     def task_type(self):
@@ -1088,6 +1066,28 @@ class ShowTaskGroupResponse(SdkResponse):
         :type consistency_check: str
         """
         self._consistency_check = consistency_check
+
+    @property
+    def obs_system(self):
+        r"""Gets the obs_system of this ShowTaskGroupResponse.
+
+        OBS系统类型 BUCKET：一般桶 PFS：并行文件系统
+
+        :return: The obs_system of this ShowTaskGroupResponse.
+        :rtype: str
+        """
+        return self._obs_system
+
+    @obs_system.setter
+    def obs_system(self, obs_system):
+        r"""Sets the obs_system of this ShowTaskGroupResponse.
+
+        OBS系统类型 BUCKET：一般桶 PFS：并行文件系统
+
+        :param obs_system: The obs_system of this ShowTaskGroupResponse.
+        :type obs_system: str
+        """
+        self._obs_system = obs_system
 
     @property
     def enable_requester_pays(self):

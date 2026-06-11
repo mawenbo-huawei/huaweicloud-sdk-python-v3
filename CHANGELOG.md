@@ -1,3 +1,1284 @@
+# 3.1.198 2026-06-04
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+
+### HuaweiCloud SDK DataArtsStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateSubject**
+    - changes of request param
+      - `+ name_ch`
+      - `+ name_en`
+      - `+ description`
+      - `+ qualified_name`
+      - `+ guid`
+      - `+ code`
+      - `+ alias`
+      - `+ status`
+      - `+ new_biz`
+      - `+ data_owner`
+      - `+ data_owner_list`
+      - `+ data_department`
+      - `+ path`
+      - `+ level`
+      - `+ ordinal`
+      - `+ owner`
+      - `+ parent_id`
+      - `+ swap_order_id`
+      - `+ id`
+      - `+ qualified_id`
+      - `+ from_public`
+      - `+ create_by`
+      - `+ update_by`
+      - `+ children_num`
+      - `+ self_defined_fields`
+      - `- entity`
+      - `* body: object<CatalogParamsVO> -> object<CatalogVO>`
+  - **CreateSubject**
+    - changes of request param
+      - `+ name_ch`
+      - `+ name_en`
+      - `+ description`
+      - `+ qualified_name`
+      - `+ guid`
+      - `+ code`
+      - `+ alias`
+      - `+ status`
+      - `+ new_biz`
+      - `+ data_owner`
+      - `+ data_owner_list`
+      - `+ data_department`
+      - `+ path`
+      - `+ level`
+      - `+ ordinal`
+      - `+ owner`
+      - `+ parent_id`
+      - `+ swap_order_id`
+      - `+ id`
+      - `+ qualified_id`
+      - `+ from_public`
+      - `+ create_by`
+      - `+ update_by`
+      - `+ children_num`
+      - `+ self_defined_fields`
+      - `- entity`
+      - `* body: object<CatalogParamsVO> -> object<CatalogVO>`
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAvalibleRds**
+    - changes of response param
+      - `+ total`
+      - `+ offset`
+      - `+ limit`
+  - **ShowAvalibleDdms**
+    - changes of response param
+      - `+ total`
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `BindPublicGateway`, `UnbindPublicGateway`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.groups.nodes.nat_gateway_id`
+      - `+ instances.groups.nodes.external_service_port`
+
+### HuaweiCloud SDK LakeFormation
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ShowAgencyCredential`
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteDatabase**
+    - changes of request param
+      - `+ is_async`
+  - **UpdateDatabase**
+    - changes of request param
+      - `+ external_database_id`
+      - `+ data_statistic_enable`
+      - `+ connection_name`
+      - `+ database_type`
+  - **CreateDatabase**
+    - changes of request param
+      - `+ external_database_id`
+      - `+ data_statistic_enable`
+      - `+ connection_name`
+      - `+ database_type`
+  - **ListDatabases**
+    - changes of request param
+      - `+ external_database_id`
+      - `+ deleted`
+  - **CreateTable**
+    - changes of request param
+      - `+ table_format`
+      - `+ data_statistic_enable`
+      - `+ create_open_table_format_input`
+      - `+ table_type: enum value [DICTIONARY_TABLE,LAKE_TABLE]`
+      - `* body: object<TableInput> -> object<CreateTableInput>`
+  - **ListTables**
+    - changes of request param
+      - `+ table_format`
+      - `+ deleted`
+      - `+ include_fields`
+      - `+ table_type: enum value [DICTIONARY_TABLE,LAKE_TABLE]`
+  - **DeleteTable**
+    - changes of request param
+      - `+ is_async`
+  - **ShowTable**
+    - changes of request param
+      - `+ version_id`
+
+### HuaweiCloud SDK Workspace
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdateAuthConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **SendEmail**
+    - changes of request param
+      - `+ phone_template_id`
+  - **CreateDesktop**
+    - changes of request param
+      - `+ ou_name`
+  - **CreateDesktopOrder**
+    - changes of request param
+      - `+ hour_package_resources.create_desktops.ou_name`
+  - **ShowAuthConfig**
+    - changes of response param
+      - `+ sms_login_enabled`
+  - **UpdateAuthMethodConfig**
+    - changes of request param
+      - `+ sms_login_enabled`
+  - **ValidateConfig**
+    - changes of request param
+      - `+ sms_login_enabled`
+  - **CreateOrder**
+    - changes of request param
+      - `+ resources.create_desktops.ou_name`
+      - `- resources.subscribe_user_sharer.users.user_phone`
+      - `- resources.subscribe_user_sharer.users.ai_func`
+
+# 3.1.197 2026-05-28
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **Restore2Exist**
+    - changes of request param
+      - `+ source.restore_time`
+      - `* source: object -> object<RestoreInstSource>`
+      - `+ target.instance_id`
+      - `* target: object -> object<RestoreInstTarget>`
+
+### HuaweiCloud SDK DWS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListClusterScaleInNumbers**
+    - changes of request param
+      - `+ logical_cluster_name`
+  - **ShowResizePreparation**
+    - changes of response param
+      - `+ instance_ids`
+  - **CreateLogicalClusterPlan**
+    - changes of request param
+      - `* start_time: string -> int64`
+      - `* end_time: string -> int64`
+  - **ShrinkLogicalCluster**
+    - changes of request param
+      - `+ shrink_node_num`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.ssl`
+
+### HuaweiCloud SDK OMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `CheckUrlSourceListFileFormat`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowTask**
+    - changes of response param
+      - `+ obs_system`
+  - **ShowTaskGroup**
+    - changes of response param
+      - `+ obs_system`
+  - **ListTasks**
+    - changes of request param
+      - `+ task_name`
+    - changes of response param
+      - `+ obs_system`
+      - `+ tasks.obs_system`
+  - **ListTaskGroup**
+    - changes of response param
+      - `+ obs_system`
+      - `+ taskgroups.obs_system`
+
+### HuaweiCloud SDK SMS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `UnlockTargetEcs`, `CheckNetAcl`, `ShowSha256`
+
+# 3.1.196 2026-05-21
+
+### HuaweiCloud SDK DGC
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowJob**
+    - changes of request param
+      - `+ getJobSubmitVersion`
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchDeleteLoadbalancers**
+    - changes of response param
+      - `+ request_id`
+  - **BatchDeleteCertificates**
+    - changes of response param
+      - `+ request_id`
+  - **BatchDeletePools**
+    - changes of response param
+      - `+ request_id`
+  - **BatchEnableDomainIPs**
+    - changes of response param
+      - `+ request_id`
+      - `- ips`
+      - `+ ips.enable`
+      - `+ ips.ip_address`
+      - `+ ips.type`
+      - `+ ips.domain_name`
+      - `+ ips.created_at`
+      - `+ ips.updated_at`
+      - `- ips.ips`
+      - `* ips: list<ListDnsIpResponseBody> -> list<DnsIpResponse>`
+  - **BatchDisableDomainIPs**
+    - changes of response param
+      - `+ request_id`
+      - `- ips`
+      - `+ ips.enable`
+      - `+ ips.ip_address`
+      - `+ ips.type`
+      - `+ ips.domain_name`
+      - `+ ips.created_at`
+      - `+ ips.updated_at`
+      - `- ips.ips`
+      - `* ips: list<ListDnsIpResponseBody> -> list<DnsIpResponse>`
+  - **ListDomainIPs**
+    - changes of request param
+      - `+ marker`
+      - `+ limit`
+      - `+ page_reverse`
+    - changes of response param
+      - `+ page_info`
+      - `+ request_id`
+      - `- ips.id`
+  - **UpdateUserDefinedDomainConfig**
+    - changes of response param
+      - `+ request_id`
+      - `+ loadbalancer.id`
+      - `- loadbalancer.public_dns_zone_id`
+      - `- loadbalancer.private_dns_zone_id`
+  - **UpdateSystemDefaultDomainConfig**
+    - changes of response param
+      - `+ request_id`
+      - `+ loadbalancer.id`
+      - `- loadbalancer.public_dns_zone_id`
+      - `- loadbalancer.private_dns_zone_id`
+  - **ListAllL7Rules**
+    - changes of request param
+      - `+ l7policy_id`
+  - **ListMasterSlavePools**
+    - changes of request param
+      - `+ public_border_group`
+    - changes of response param
+      - `+ pools.public_border_group`
+  - **CreateMasterSlavePool**
+    - changes of request param
+      - `+ pool.public_border_group`
+    - changes of response param
+      - `+ pool.public_border_group`
+  - **ShowMasterSlavePool**
+    - changes of response param
+      - `+ pool.public_border_group`
+
+# 3.1.195 2026-05-14
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UnbindLogicDb`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ChangeStrategy**
+    - changes of request param
+      - `- iam_account`
+  - **DeleteGroup**
+    - changes of response param
+      - `+ order_id`
+  - **UploadSchemaMetadata**
+    - changes of request param
+      - `- iam_account`
+  - **ShowPublicIp**
+    - changes of response param
+      - `+ public_ip_list.group_id`
+  - **CreateGroup**
+    - changes of response param
+      - `+ instance_id`
+
+### HuaweiCloud SDK DWS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdateQueueBaseInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IEC
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `BatchListMetricData`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ReEncrypt`, `DeriveSharedSecret`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK OMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **StartTask**
+    - changes of request param
+      - `+ src_crypto_type`
+      - `+ src_kms_key_id`
+      - `+ dst_crypto_type`
+      - `+ dst_kms_key_id`
+      - `+ source_cdn_crypto_type`
+      - `+ source_cdn_kms_key_id`
+  - **ShowSyncTask**
+    - changes of response param
+      - `- enable_kms`
+  - **StartSyncTask**
+    - changes of request param
+      - `+ src_crypto_type`
+      - `+ src_kms_key_id`
+      - `+ dst_crypto_type`
+      - `+ dst_kms_key_id`
+      - `+ source_cdn_crypto_type`
+      - `+ source_cdn_kms_key_id`
+  - **StartTaskGroup**
+    - changes of request param
+      - `+ src_crypto_type`
+      - `+ src_kms_key_id`
+      - `+ dst_crypto_type`
+      - `+ dst_kms_key_id`
+      - `+ source_cdn_crypto_type`
+      - `+ source_cdn_kms_key_id`
+  - **RetryTaskGroup**
+    - changes of request param
+      - `+ src_crypto_type`
+      - `+ src_kms_key_id`
+      - `+ dst_crypto_type`
+      - `+ dst_kms_key_id`
+      - `+ source_cdn_crypto_type`
+      - `+ source_cdn_kms_key_id`
+  - **ShowCdnInfo**
+    - changes of request param
+      - `+ source_cdn.crypto_type`
+      - `+ source_cdn.kms_key_id`
+  - **ShowTask**
+    - changes of response param
+      - `- enable_kms`
+  - **CreateSyncTask**
+    - changes of request param
+      - `+ src_crypto_type`
+      - `+ src_kms_key_id`
+      - `+ dst_crypto_type`
+      - `+ dst_kms_key_id`
+      - `- enable_kms`
+      - `+ source_cdn.crypto_type`
+      - `+ source_cdn.kms_key_id`
+  - **ListSyncTasks**
+    - changes of response param
+      - `- tasks.enable_kms`
+  - **ShowTaskGroup**
+    - changes of response param
+      - `- enable_kms`
+  - **CreateTask**
+    - changes of request param
+      - `- enable_kms`
+      - `+ dst_node.crypto_type`
+      - `+ dst_node.kms_key_id`
+      - `+ source_cdn.crypto_type`
+      - `+ source_cdn.kms_key_id`
+      - `+ src_node.crypto_type`
+      - `+ src_node.kms_key_id`
+  - **ListTasks**
+    - changes of response param
+      - `- enable_kms`
+      - `- tasks.enable_kms`
+  - **CreateTaskGroup**
+    - changes of request param
+      - `- enable_kms`
+      - `+ dst_node.crypto_type`
+      - `+ dst_node.kms_key_id`
+      - `+ source_cdn.crypto_type`
+      - `+ source_cdn.kms_key_id`
+      - `+ src_node.crypto_type`
+      - `+ src_node.kms_key_id`
+  - **ListTaskGroup**
+    - changes of response param
+      - `- enable_kms`
+      - `- taskgroups.enable_kms`
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `+ enable_intranet_access`
+      - `+ obs_enc_kms_key_id`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListAssetEditTask`, `CreateAssetEditTask`, `DeleteAssetEditTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetProcessTask**
+    - changes of response param
+      - `+ thumbnail_task_id`
+  - **ModifySubtitle**
+    - changes of response param
+      - `+ thumbnail_task_id`
+
+# 3.1.194 2026-05-07
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPipelineRunDetail**
+    - changes of response param
+      - `+ sources.params.build_params.virtual_merge_commit_id`
+      - `- sources.params.build_params.virtual_merge_commitId`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListUpgradePaths`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK HSS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ListAiComponentDetail`
+    - `ListAiComponentStatistics`
+    - `ListCommonHost`
+    - `BatchUpdateClusterResource`
+    - `ListCustomRuleConfigDetail`
+    - `ResumePauseCustomRuleConfig`
+    - `ListCustomRuleConfigs`
+    - `UpdateCustomRuleConfig`
+    - `CreateCustomRuleConfig`
+    - `DeleteCustomRuleConfig`
+    - `ListRelatedEvents`
+    - `ListAgentStatus`
+    - `BatchUpdateHostResource`
+    - `ListSecurityReport`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ExportVuls**
+    - changes of request param
+      - `+ node_type`
+  - **ListVulHostHosts**
+    - changes of request param
+      - `+ node_type`
+    - changes of response param
+      - `+ data_list.node_type`
+  - **ListAgentDaemonsetInfo**
+    - changes of response param
+      - `+ data_list.resource_info`
+  - **ShowAgentDaemonsetDetailInfo**
+    - changes of response param
+      - `+ resource_info`
+  - **UpdateAgentDaemonset**
+    - changes of request param
+      - `+ resource_info`
+  - **CreateAgentDaemonset**
+    - changes of request param
+      - `+ resource_info`
+  - **ListHostStatus**
+    - changes of response param
+      - `+ data_list.container_type`
+      - `+ data_list.ransom_protection_status`
+      - `+ data_list.wtp_protect_status`
+      - `+ data_list.two_factor_auth`
+      - `+ data_list.data_center_tag`
+      - `+ data_list.service_provider_name`
+      - `+ data_list.node_runtime_info`
+      - `+ data_list.mode`
+      - `+ data_list.cpu_limit`
+      - `+ data_list.mem_limit`
+  - **ListVulHosts**
+    - changes of request param
+      - `+ node_type`
+    - changes of response param
+      - `+ data_list.node_type`
+  - **ListVulRepairFailedDetail**
+    - changes of response param
+      - `+ data_list.reason_description`
+  - **ListClusterProtectionDefaultPolicy**
+    - changes of response param
+      - `* data_list.resources.labels: string -> list<string>`
+  - **ListClusterProtectionPolicyDetail**
+    - changes of response param
+      - `* data_list.resources.labels: string -> list<string>`
+  - **ListClusterProtectionPolicy**
+    - changes of response param
+      - `* data_list.resources.labels: string -> list<string>`
+  - **ListVulnerabilities**
+    - changes of request param
+      - `+ node_type`
+  - **ListAntiVirusPolicy**
+    - changes of request param
+      - `+ scan_type`
+
+# 3.1.193 2026-04-30
+
+### HuaweiCloud SDK BSS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AutoRenewalResources**
+    - changes of request param
+      - `+ period_type`
+
+### HuaweiCloud SDK BSSINTL
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AutoRenewalResources**
+    - changes of request param
+      - `+ period_type`
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPipelineRuns**
+    - changes of request param
+      - `+ update_time`
+  - **ShowStepOutputs**
+    - changes of response param
+      - `* step_outputs.output_result.value: string -> object`
+  - **ShowPipelineRunDetail**
+    - changes of response param
+      - `+ sources.params.build_params.virtual_merge_branch`
+      - `+ sources.params.build_params.virtual_merge_commitId`
+      - `+ stages.pre.daily_build_number`
+
+### HuaweiCloud SDK Config
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAggregatePolicyAssignmentDetail**
+    - changes of response param
+      - `+ aggregator_name`
+
+### HuaweiCloud SDK CPCS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowClusterAccessKeyList**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **SwitchCpcsToken**
+    - changes of request param
+      - `+ app_id`
+      - `- auth`
+      - `- scope`
+    - changes of response param
+      - `+ token`
+      - `- roles`
+      - `- ak`
+      - `- expired_at`
+      - `- issued_at`
+      - `- user`
+  - **ShowAuditLog**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+    - changes of response param
+      - `+ audit_records.status`
+      - `+ audit_records.failure_message`
+      - `+ audit_records.verification`
+      - `- audit_records.operate_status`
+      - `- audit_records.operate_message`
+      - `- audit_records.audit_status`
+  - **ShowResourceDetailCertificate**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ShowResourceDetailAccessKey**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ListCcspTenantImages**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ShowCcspInstanceInfo**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ShowCcspClusterList**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ShowAssociationList**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ShowAppAccessKeyList**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+  - **ShowAppList**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+      - `- page_size`
+      - `- page_num`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowChildNum**
+    - changes of request param
+      - `+ db_type: enum value [ddm]`
+      - `+ db_type: enum value [ ddm]`
+  - **ListDbObjects**
+    - changes of response param
+      - `+ status: enum value [failed,pending]`
+      - `- status: enum value [ failed, pending]`
+  - **ShowDbObjectCollectionStatus**
+    - changes of response param
+      - `+ status: enum value [failed,pending]`
+      - `- status: enum value [ failed, pending]`
+  - **ShowDbObjectsList**
+    - changes of response param
+      - `+ status: enum value [failed,pending]`
+      - `- status: enum value [ failed, pending]`
+  - **ShowDataProgress**
+    - changes of response param
+      - `+ data_process_info.filter_conditions.filtering_type: enum value [configConditionalFilter]`
+      - `- data_process_info.filter_conditions.filtering_type: enum value [ configConditionalFilter]`
+  - **UpdateDataProgress**
+    - changes of request param
+      - `+ data_process_info.filter_conditions.filtering_type: enum value [configConditionalFilter]`
+      - `- data_process_info.filter_conditions.filtering_type: enum value [ configConditionalFilter]`
+  - **CheckDataFilter**
+    - changes of request param
+      - `+ data_process_info.filter_conditions.filtering_type: enum value [configConditionalFilter]`
+      - `- data_process_info.filter_conditions.filtering_type: enum value [ configConditionalFilter]`
+  - **ExecuteJobAction**
+    - changes of request param
+      - `+ job.action_params.compare_task_param.data_process_info.filter_conditions.filtering_type: enum value [configConditionalFilter]`
+      - `- job.action_params.compare_task_param.data_process_info.filter_conditions.filtering_type: enum value [ configConditionalFilter]`
+  - **BatchExecuteJobActions**
+    - changes of request param
+      - `+ jobs.action_params.compare_task_param.data_process_info.filter_conditions.filtering_type: enum value [configConditionalFilter]`
+      - `- jobs.action_params.compare_task_param.data_process_info.filter_conditions.filtering_type: enum value [ configConditionalFilter]`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **SetAuditlogPolicy**
+    - changes of request param
+      - `+ databases`
+
+# 3.1.192 2026-04-24
+
+### HuaweiCloud SDK DataArtsStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListFactorySearchBaselineInstances`
+    - `ListSearchFactoryEvents`
+    - `ListSearchFactoryBaselines`
+    - `CreateFactoryBaseline`
+    - `ListFactoryWorkspacesApproval`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowInstanceResult**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+
+### HuaweiCloud SDK DC
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListVifPeerDetections**
+    - changes of request param
+      - `- vif_peer_id`
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `UpdateDdmInstanceName`, `UpdateDdmInstanceSecurityGroup`, `RebuildDdmConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DGC
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateJob**
+    - changes of request param
+      - `+ nodes.type: enum value [MRSSparkPython]`
+  - **ShowJob**
+    - changes of response param
+      - `+ nodes.type: enum value [MRSSparkPython]`
+  - **UpdateJob**
+    - changes of request param
+      - `+ nodes.type: enum value [MRSSparkPython]`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ShowSubscriptionDetail`
+    - `DeleteSubscription`
+    - `ShowCompareUsersDetail`
+    - `ShowSmnTopicInfo`
+    - `ShowChildNum`
+    - `CreateSubscription`
+    - `UpdateSubscriptionInfo`
+    - `ShowReplayReportExportStatus`
+    - `ExportReplayReport`
+    - `ListSupportLinks`
+    - `ListExtraColumns`
+    - `PauseCompareJobs`
+    - `RestartCompareJobs`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateComparePolicy**
+    - changes of request param
+      - `+ compare_policy: enum value [normal,manyToOne]`
+  - **ShowObjectMapping**
+    - changes of response param
+      - `+ object_mapping_list.object_name`
+  - **ListJobs**
+    - changes of request param
+      - `+ sort_key: enum value [name,status,create_time,net_type,job_direction,pay_mode]`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListDNatInfo`, `BindDNat`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateAgency**
+    - changes of response param
+      - `* agency.duration: string -> object`
+
+### HuaweiCloud SDK Workspace
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListLifeCycleTypeConfigurations`
+    - `ListScreenRecordsTrafficLimitConfig`
+    - `UpdateScreenRecordsTrafficLimitConfig`
+    - `ListSubscribeAiAssistantUsers`
+    - `SubscribeAiAssistant`
+    - `ShowAiAssistantUsageFrequency`
+    - `DownloadSpMetadata`
+    - `UpdateDcVnc`
+    - `ShowDomainsNew`
+    - `UpdateDomainNew`
+    - `CreateDomainNew`
+    - `CloseDomainNew`
+    - `SyncExternalUser`
+    - `UpdateFullSpeedRecordConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateDesktopNamePolicy**
+    - changes of request param
+      - `+ prefix_truncation_enabled`
+  - **ShowScreenRecord**
+    - changes of response param
+      - `+ upload_type`
+      - `+ site_type`
+  - **ExportUsersNew**
+    - changes of request param
+      - `+ user_names`
+  - **ExportUserConnectionNew**
+    - changes of request param
+      - `+ domain`
+  - **CreateDesktopNamePolicy**
+    - changes of request param
+      - `+ prefix_truncation_enabled`
+  - **ListDesktopNamePolicy**
+    - changes of response param
+      - `+ desktop_name_policy_infos.prefix_truncation_enabled`
+  - **ShowDesktopPoolDetail**
+    - changes of response param
+      - `+ user_reset_policy`
+      - `+ image_resource_type`
+      - `+ isolation_num`
+      - `+ image_cloud_service_type`
+      - `+ domain`
+      - `+ autoscale_policy.auto_isolation_enable`
+      - `+ autoscale_policy.auto_isolation_max_num`
+  - **UpdateDesktopPool**
+    - changes of request param
+      - `+ user_reset_policy`
+      - `+ autoscale_policy.auto_isolation_enable`
+      - `+ autoscale_policy.auto_isolation_max_num`
+  - **CreateChangeOrder**
+    - changes of response param
+      - `+ job_id`
+  - **CreateSubnetBandwidthChangeOrder**
+    - changes of response param
+      - `+ job_id`
+  - **CreateResourcePackagesOrder**
+    - changes of request param
+      - `+ resource_packages.resource_package_name`
+      - `+ resource_packages.desktop_resource_spec_code`
+      - `+ resource_packages.effective_time`
+      - `+ resource_packages.is_auto_renew`
+      - `- resource_packages.cloud_service_type`
+      - `- resource_packages.resource_type`
+      - `- resource_packages.package_type`
+      - `- resource_packages.cpu`
+      - `- resource_packages.architecture`
+      - `- resource_packages.memory`
+      - `- resource_packages.domain_ids`
+      - `- resource_packages.description`
+      - `- resource_packages.resource_packages`
+      - `* resource_packages: list<DesktopResourcePackage> -> list<DesktopResourceItem>`
+    - changes of response param
+      - `+ job_id`
+  - **ListScheduledTasks**
+    - changes of response param
+      - `+ scheduled_tasks.life_cycle_exec_period`
+  - **CreateScheduledTasks**
+    - changes of request param
+      - `+ life_cycle_exec_period`
+      - `- task_type: enum value [DELETE_BLACK_ECS]`
+  - **ShowScheduledTasks**
+    - changes of response param
+      - `+ life_cycle_exec_period`
+  - **UpdateScheduledTasks**
+    - changes of request param
+      - `+ apply_object_update_type`
+      - `+ life_cycle_exec_period`
+  - **ListUserGroups**
+    - changes of request param
+      - `+ domain`
+      - `+ platform_type`
+    - changes of response param
+      - `+ user_groups.platform_type: enum value [UOS]`
+  - **ListUsersOfGroup**
+    - changes of request param
+      - `* limit: string -> int32`
+      - `* offset: string -> int32`
+  - **ListTargetOfPolicyGroup**
+    - changes of response param
+      - `+ targets.target_domain`
+  - **ListScreenRecords**
+    - changes of response param
+      - `+ upload_type`
+      - `+ site_type`
+      - `+ screen_records.upload_type`
+      - `+ screen_records.site_type`
+  - **ListUsers**
+    - changes of request param
+      - `+ disabled`
+      - `+ platform_type`
+  - **ShowUserAccessStages**
+    - changes of response param
+      - `+ biz_type: enum value [SHARE_APP,VDI]`
+      - `+ stages.stage: enum value [MAIN_AUTH,MFA_AUTH,CLICK_ICON]`
+  - **ListUserEvents**
+    - changes of request param
+      - `+ domain`
+  - **CreateAgencies**
+    - changes of request param
+      - `+ scene: enum value [IMAGE_CREATION]`
+  - **CreateDesktopPool**
+    - changes of request param
+      - `+ user_reset_policy`
+      - `+ domain`
+      - `+ autoscale_policy.auto_isolation_enable`
+      - `+ autoscale_policy.auto_isolation_max_num`
+  - **ListDesktopPools**
+    - changes of response param
+      - `+ user_reset_policy`
+      - `+ image_resource_type`
+      - `+ isolation_num`
+      - `+ image_cloud_service_type`
+      - `+ domain`
+      - `+ desktop_pools.image_cloud_service_type`
+      - `+ desktop_pools.image_resource_type`
+      - `+ desktop_pools.user_reset_policy`
+      - `+ desktop_pools.isolation_num`
+      - `+ desktop_pools.domain`
+      - `+ desktop_pools.autoscale_policy.auto_isolation_enable`
+      - `+ desktop_pools.autoscale_policy.auto_isolation_max_num`
+  - **CreateDesktop**
+    - changes of request param
+      - `+ domain`
+  - **CreateDesktopBatchOrder**
+    - changes of response param
+      - `+ orders.job_id`
+  - **CreateDesktopPoolChangeOrder**
+    - changes of response param
+      - `+ orders.job_id`
+  - **ShowAssistAuthConfig**
+    - changes of request param
+      - `+ main_auth_config_id`
+    - changes of response param
+      - `+ main_auth_config_id`
+  - **ListSiteConfigs**
+    - changes of response param
+      - `+ site_infos.network_config`
+  - **ListNatMappingConfigs**
+    - changes of response param
+      - `+ nat_vag_maps.assist_auth_enabled`
+  - **UpdateNatMappingConfigs**
+    - changes of request param
+      - `+ nat_vag_maps.assist_auth_enabled`
+  - **ListWorkspaces**
+    - changes of response param
+      - `+ site_configs.network_config.dc_vnc_ip`
+  - **ApplyWorkspace**
+    - changes of request param
+      - `+ ad_domains.cba_enabled`
+      - `+ ad_domains.certificate_id`
+  - **ListDesktopUsageMetric**
+    - changes of response param
+      - `+ items.resource_pool_name`
+      - `+ items.machine_sid`
+      - `+ items.latest_connect_username`
+  - **ListUserUsageMetric**
+    - changes of request param
+      - `+ domain`
+  - **ListPoolDesktopsDetail**
+    - changes of request param
+      - `+ isolated`
+      - `+ inconsistent_type: enum value [AUTO_ISOLATION]`
+    - changes of response param
+      - `+ pool_desktops.isolated`
+      - `+ pool_desktops.domain`
+  - **ShowDesktopDetail**
+    - changes of response param
+      - `+ desktop.isolated`
+      - `+ desktop.domain`
+  - **ListDesktopsDetail**
+    - changes of response param
+      - `+ desktops.isolated`
+      - `+ desktops.domain`
+  - **CreateDesktopOrder**
+    - changes of request param
+      - `+ hour_package_resources.create_desktops.domain`
+    - changes of response param
+      - `+ job_id`
+  - **CreateOrder**
+    - changes of request param
+      - `+ resources.create_desktops.domain`
+      - `+ resources.create_desktop_pool.user_reset_policy`
+      - `+ resources.create_desktop_pool.domain`
+      - `+ resources.create_desktop_pool.autoscale_policy.auto_isolation_enable`
+      - `+ resources.create_desktop_pool.autoscale_policy.auto_isolation_max_num`
+      - `+ resources.subscribe_user_sharer.users.user_phone`
+      - `+ resources.subscribe_user_sharer.users.ai_func`
+    - changes of response param
+      - `+ job_id`
+  - **ListPoliciesOfPolicyGroup**
+    - changes of response param
+      - `+ policies.domain_control`
+      - `+ policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policies.session.is_lock_screen_on_disconnect`
+      - `+ policies.session.vdi.ignore_power_status`
+  - **UpdatePoliciesOfPolicyGroup**
+    - changes of request param
+      - `+ policies.domain_control`
+      - `+ policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policies.session.is_lock_screen_on_disconnect`
+      - `+ policies.session.vdi.ignore_power_status`
+    - changes of response param
+      - `+ policies.domain_control`
+      - `+ policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policies.session.is_lock_screen_on_disconnect`
+      - `+ policies.session.vdi.ignore_power_status`
+  - **ListOriginalPolicyInfo**
+    - changes of response param
+      - `+ policies.domain_control`
+      - `+ policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policies.session.is_lock_screen_on_disconnect`
+      - `+ policies.session.vdi.ignore_power_status`
+  - **ListPolicyGroup**
+    - changes of response param
+      - `+ policy_groups.targets.target_domain`
+      - `+ policy_groups.policies.domain_control`
+      - `+ policy_groups.policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policy_groups.policies.session.is_lock_screen_on_disconnect`
+      - `+ policy_groups.policies.session.vdi.ignore_power_status`
+  - **CreatePolicyGroup**
+    - changes of request param
+      - `+ policy_group.policies.domain_control`
+      - `+ policy_group.policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policy_group.policies.session.is_lock_screen_on_disconnect`
+      - `+ policy_group.policies.session.vdi.ignore_power_status`
+  - **ListPolicyDetailInfoById**
+    - changes of response param
+      - `+ policy_group.targets.target_domain`
+      - `+ policy_group.policies.domain_control`
+      - `+ policy_group.policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policy_group.policies.session.is_lock_screen_on_disconnect`
+      - `+ policy_group.policies.session.vdi.ignore_power_status`
+  - **UpdatePolicyGroup**
+    - changes of request param
+      - `+ policy_group.policies.domain_control`
+      - `+ policy_group.policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policy_group.policies.session.is_lock_screen_on_disconnect`
+      - `+ policy_group.policies.session.vdi.ignore_power_status`
+  - **ListPolicyGroupInfo**
+    - changes of response param
+      - `+ policy_groups.targets.target_domain`
+      - `+ policy_groups.policies.domain_control`
+      - `+ policy_groups.policies.display.display_level: enum value [LEVEL6,LEVEL7,LEVEL8]`
+      - `+ policy_groups.policies.session.is_lock_screen_on_disconnect`
+      - `+ policy_groups.policies.session.vdi.ignore_power_status`
+
 # 3.1.191 2026-04-09
 
 ### HuaweiCloud SDK CloudDC

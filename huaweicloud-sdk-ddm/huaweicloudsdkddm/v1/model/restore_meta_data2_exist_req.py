@@ -15,8 +15,8 @@ class RestoreMetaData2ExistReq:
     sensitive_list = []
 
     openapi_types = {
-        'source': 'object',
-        'target': 'object'
+        'source': 'RestoreMetaDataSource',
+        'target': 'RestoreMetaDataTarget'
     }
 
     attribute_map = {
@@ -29,10 +29,10 @@ class RestoreMetaData2ExistReq:
 
         The model defined in huaweicloud sdk
 
-        :param source: metadata恢复源。
-        :type source: object
-        :param target: metadata恢复目标。
-        :type target: object
+        :param source: 
+        :type source: :class:`huaweicloudsdkddm.v1.RestoreMetaDataSource`
+        :param target: 
+        :type target: :class:`huaweicloudsdkddm.v1.RestoreMetaDataTarget`
         """
         
         
@@ -41,19 +41,15 @@ class RestoreMetaData2ExistReq:
         self._target = None
         self.discriminator = None
 
-        if source is not None:
-            self.source = source
-        if target is not None:
-            self.target = target
+        self.source = source
+        self.target = target
 
     @property
     def source(self):
         r"""Gets the source of this RestoreMetaData2ExistReq.
 
-        metadata恢复源。
-
         :return: The source of this RestoreMetaData2ExistReq.
-        :rtype: object
+        :rtype: :class:`huaweicloudsdkddm.v1.RestoreMetaDataSource`
         """
         return self._source
 
@@ -61,10 +57,8 @@ class RestoreMetaData2ExistReq:
     def source(self, source):
         r"""Sets the source of this RestoreMetaData2ExistReq.
 
-        metadata恢复源。
-
         :param source: The source of this RestoreMetaData2ExistReq.
-        :type source: object
+        :type source: :class:`huaweicloudsdkddm.v1.RestoreMetaDataSource`
         """
         self._source = source
 
@@ -72,10 +66,8 @@ class RestoreMetaData2ExistReq:
     def target(self):
         r"""Gets the target of this RestoreMetaData2ExistReq.
 
-        metadata恢复目标。
-
         :return: The target of this RestoreMetaData2ExistReq.
-        :rtype: object
+        :rtype: :class:`huaweicloudsdkddm.v1.RestoreMetaDataTarget`
         """
         return self._target
 
@@ -83,10 +75,8 @@ class RestoreMetaData2ExistReq:
     def target(self, target):
         r"""Sets the target of this RestoreMetaData2ExistReq.
 
-        metadata恢复目标。
-
         :param target: The target of this RestoreMetaData2ExistReq.
-        :type target: object
+        :type target: :class:`huaweicloudsdkddm.v1.RestoreMetaDataTarget`
         """
         self._target = target
 

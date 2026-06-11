@@ -15,8 +15,8 @@ class RestoreInst2ExistReq:
     sensitive_list = []
 
     openapi_types = {
-        'source': 'object',
-        'target': 'object',
+        'source': 'RestoreInstSource',
+        'target': 'RestoreInstTarget',
         'data_node_relations': 'list[DataNodeRelation]'
     }
 
@@ -31,10 +31,10 @@ class RestoreInst2ExistReq:
 
         The model defined in huaweicloud sdk
 
-        :param source: 数据恢复源。
-        :type source: object
-        :param target: 数据恢复目标。
-        :type target: object
+        :param source: 
+        :type source: :class:`huaweicloudsdkddm.v1.RestoreInstSource`
+        :param target: 
+        :type target: :class:`huaweicloudsdkddm.v1.RestoreInstTarget`
         :param data_node_relations: 关联dn。
         :type data_node_relations: list[:class:`huaweicloudsdkddm.v1.DataNodeRelation`]
         """
@@ -46,21 +46,16 @@ class RestoreInst2ExistReq:
         self._data_node_relations = None
         self.discriminator = None
 
-        if source is not None:
-            self.source = source
-        if target is not None:
-            self.target = target
-        if data_node_relations is not None:
-            self.data_node_relations = data_node_relations
+        self.source = source
+        self.target = target
+        self.data_node_relations = data_node_relations
 
     @property
     def source(self):
         r"""Gets the source of this RestoreInst2ExistReq.
 
-        数据恢复源。
-
         :return: The source of this RestoreInst2ExistReq.
-        :rtype: object
+        :rtype: :class:`huaweicloudsdkddm.v1.RestoreInstSource`
         """
         return self._source
 
@@ -68,10 +63,8 @@ class RestoreInst2ExistReq:
     def source(self, source):
         r"""Sets the source of this RestoreInst2ExistReq.
 
-        数据恢复源。
-
         :param source: The source of this RestoreInst2ExistReq.
-        :type source: object
+        :type source: :class:`huaweicloudsdkddm.v1.RestoreInstSource`
         """
         self._source = source
 
@@ -79,10 +72,8 @@ class RestoreInst2ExistReq:
     def target(self):
         r"""Gets the target of this RestoreInst2ExistReq.
 
-        数据恢复目标。
-
         :return: The target of this RestoreInst2ExistReq.
-        :rtype: object
+        :rtype: :class:`huaweicloudsdkddm.v1.RestoreInstTarget`
         """
         return self._target
 
@@ -90,10 +81,8 @@ class RestoreInst2ExistReq:
     def target(self, target):
         r"""Sets the target of this RestoreInst2ExistReq.
 
-        数据恢复目标。
-
         :param target: The target of this RestoreInst2ExistReq.
-        :type target: object
+        :type target: :class:`huaweicloudsdkddm.v1.RestoreInstTarget`
         """
         self._target = target
 
